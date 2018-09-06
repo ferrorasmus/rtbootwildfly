@@ -14,7 +14,7 @@ public class HelloWildFlyController {
 
     @RequestMapping("direct")
     public String direct(){
-        producerTemplate.sendBody("direct:firstRoute", "Hello, SpringBoot on Wildfly via camel route");
+        return producerTemplate.sendBody("direct:firstRoute", "Hello, SpringBoot on Wildfly via camel route");
     }
 
     @RequestMapping("hello")
