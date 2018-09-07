@@ -1,15 +1,24 @@
 package bootwildfly;
 
 import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.model.rest.RestBindingMode;
+import org.apache.camel.LoggingLevel;
 import org.springframework.stereotype.Component;
 
 @Component
 public class CamelRoutes extends RouteBuilder {
 
-    @Override
-    public void configure() throws Exception {
-        from("direct:firstRoute")
-            .log("Camel body: ${body}");
-    }
+  @Override
+  public void configure() throws Exception {
+    restConfiguration()
+      .component("servlet")
+      .bindingMode(RestBindingMode.json);
 
+    rest().get("/hello")
+      .to("direct:hello");
+ 
+    from("direct:hello")
+      .log(LoggingLevel.INFO, "Hello World")
+      .transform().simple("Hello World");
+   }
 }
