@@ -16,15 +16,8 @@ public class CamelRoutes extends RouteBuilder {
     rest()
       .bindingMode(RestBindingMode.json)
       .produces("application/json")
-       .get("/{type}") 
-           .log("${body}")
-           .to("direct:hello");
-       .get("/")
-           .log("${body}")
-           .route().setHeader("type")
-                .content("info")
-                .to("direct:hello")
-        .endRest();
+       .get("/{type}").to("direct:hello")
+       .get("/typ").to("direct:hello");
  
     from("direct:hello")
       .log(LoggingLevel.INFO, "Hello World")
