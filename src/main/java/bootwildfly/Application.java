@@ -29,14 +29,5 @@ public class Application extends SpringBootServletInitializer {
         return registration;
     }
    
-    @Bean
-    public RouteBuilder routeBuilder() {
-        return new CamelRoutes();
-    }
-
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(Application.class);
-    }
 }
 
