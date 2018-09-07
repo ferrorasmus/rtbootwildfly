@@ -10,9 +10,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.apache.camel.component.servlet.CamelHttpTransportServlet;
-
+import org.apache.camel.builder.RouteBuilder;
+  
 @Configuration
-@ComponentScan(basePackage = "bootwildfly")
+@ComponentScan(basePackages = "bootwildfly")
 @EnableAutoConfiguration
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
