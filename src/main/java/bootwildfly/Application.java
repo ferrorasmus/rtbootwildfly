@@ -34,9 +34,9 @@ public class Application extends SpringBootServletInitializer {
         return new CamelRoutes();
     }
 
-//    @Override
-//    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-//        return application.sources(Application.class);
-//    }
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(Application.class);
+    }
 }
 
