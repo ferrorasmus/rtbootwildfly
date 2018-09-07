@@ -27,12 +27,12 @@ public class Application extends SpringBootServletInitializer {
         SpringApplication.run(Application.class, args);
     }
 
-    @Bean
-    public ServletRegistrationBean camelServletRegistrationBean() {
-        ServletRegistrationBean registration = new ServletRegistrationBean(new CamelHttpTransportServlet(), "/camel/*");
-        registration.setName("CamelServlet");
-        return registration;
-    }
+    #@Bean
+    #public ServletRegistrationBean camelServletRegistrationBean() {
+    #    ServletRegistrationBean registration = new ServletRegistrationBean(new CamelHttpTransportServlet(), "/camel/*");
+    #    registration.setName("CamelServlet");
+    #    return registration;
+    #}
   
     @Bean
     public RouteBuilder routeBuilder() {
