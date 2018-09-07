@@ -33,7 +33,7 @@ public class Application extends SpringBootServletInitializer {
     #    registration.setName("CamelServlet");
     #    return registration;
     #}
-  
+   
     @Bean
     public RouteBuilder routeBuilder() {
         return new CamelRoutes();
